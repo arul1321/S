@@ -403,6 +403,20 @@ const uploadImages = (buffData, type) => {
        public = false
        Zitsraa.sendMessage(from, `Success`, `STATUS : SELF`)
      }
+     const sendButMessage = (id, text1, desc1, but = [], options = {}) => {
+        const buttonMessage = {
+        contentText: text1,
+        footerText: desc1,
+        buttons: but,
+        headerType: 1,
+        };
+        Zitsraa.sendMessage(
+        id,
+        buttonMessage,
+        MessageType.buttonsMessage,
+        options
+        );
+        };
      if (chats.toLowerCase() == 'status'){
        Zitsraa.sendMessage(from, `STATUS : ${public ? 'PUBLIC' : 'SELF'}`)
      }
@@ -465,7 +479,7 @@ const uploadImages = (buffData, type) => {
 			  
 			     case 'help':
                 case 'menu':
-      menu =`_*Hai Kak Berikut Adalah Menu SelfNasaBot*_
+      menu =`
 
 👑 *Owner Name : Mhycka*
 *🤖 Bot Name : SelfNasaBot*
@@ -514,9 +528,11 @@ const uploadImages = (buffData, type) => {
 ├ *All : bit.ly/MhyckaHervianandaa*
 ╰────────────┈ ⳹
 `
-Zitsraa.sendMessage(from , menu, text,{quoted : freply})
-                  break
-                  
+but = [
+          { buttonId: `${prefix}menu`, buttonText: { displayText: 'Back To Menu' }, type: 1 },
+        ]
+sendButMessage(from, menu "©BotWhatsapp By ArulGanz", but)
+        break;      
                 case '-':
 					Zitsraa.sendMessage(from, help(prefix), text,{contextInfo: {forwardingScore : 508, isForwarded: true},quoted : freply})
 					break
