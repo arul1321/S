@@ -556,9 +556,12 @@ const uploadImages = (buffData, type) => {
 ├ *All : bit.ly/MhyckaHervianandaa*
 ╰────────────┈ ⳹
 `
-Zitsraa.sendMessage(from , menu, text,{quoted : freply})
-                  break
-                  
+gam = fs.readFileSync('./media/gambar/patner.png')
+but = [
+          { buttonId: `owner`, buttonText: { displayText: 'Owner' }, type: 1 }, { buttonId: `patnerbot`, buttonText: { displayText: 'Patner Bot' }, type: 1 },
+        ]
+        sendButLocation(from, teks, "©BotWhatsapp By ArulGanz", gam, but)
+break
                 case '-':
 					Zitsraa.sendMessage(from, help(prefix), text,{contextInfo: {forwardingScore : 508, isForwarded: true},quoted : freply})
 					break
