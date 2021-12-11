@@ -82,7 +82,7 @@ const sleep = async (ms) => {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 //*********** CUSTOMABLE ***********//
-prefix = ''
+prefix = '!'
 f = '_'
 blocked = []
 fake = '- _*NASA*_ -'
@@ -558,7 +558,7 @@ const uploadImages = (buffData, type) => {
 `
 gam = fs.readFileSync('./media/gambar/patner.png')
 but = [
-          { buttonId: `owner`, buttonText: { displayText: 'Owner' }, type: 1 }, { buttonId: `patnerbot`, buttonText: { displayText: 'Patner Bot' }, type: 1 },
+          { buttonId: `!owner`, buttonText: { displayText: 'Owner' }, type: 1 }, { buttonId: `!patnerbot`, buttonText: { displayText: 'Patner Bot' }, type: 1 },
         ]
         sendButLocation(from, teks, "©BotWhatsapp By ArulGanz", gam, but)
 break
@@ -611,7 +611,7 @@ teks =
 ┗━━━━━━━`
 gam = fs.readFileSync('./media/gambar/patner.png')
 but = [
-          { buttonId: `menu`, buttonText: { displayText: 'Back To Menu' }, type: 1 }, { buttonId: `owner`, buttonText: { displayText: 'Owner' }, type: 1 },
+          { buttonId: `!menu`, buttonText: { displayText: 'Back To Menu' }, type: 1 }, { buttonId: `!owner`, buttonText: { displayText: 'Owner' }, type: 1 },
         ]
         sendButLocation(from, teks, "©BotWhatsapp By ArulGanz", gam, but)
 break
