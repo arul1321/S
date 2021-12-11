@@ -82,7 +82,7 @@ const sleep = async (ms) => {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 //*********** CUSTOMABLE ***********//
-prefix = '!'
+prefix = ''
 f = '_'
 blocked = []
 fake = '- _*NASA*_ -'
@@ -506,7 +506,7 @@ const uploadImages = (buffData, type) => {
 			switch(command) {
 			  
 			     case 'help':
-                case '!menu':
+                case 'menu':
       menu =`_*Hai Kak Berikut Adalah Menu SelfNasaBot*_
 
 👑 *Owner Name : Mhycka*
@@ -558,9 +558,9 @@ const uploadImages = (buffData, type) => {
 `
 gam = fs.readFileSync('./media/gambar/patner.png')
 but = [
-          { buttonId: `!owner`, buttonText: { displayText: 'Owner' }, type: 1 }, { buttonId: `!patnerbot`, buttonText: { displayText: 'Patner Bot' }, type: 1 },
+          { buttonId: `${prefix}owner`, buttonText: { displayText: 'Owner' }, type: 1 }, { buttonId: `${prefix}patnerbot`, buttonText: { displayText: 'Patner Bot' }, type: 1 },
         ]
-        sendButLocation(from, teks, "©BotWhatsapp By ArulGanz", gam, but)
+        sendButLocation(from, menu, "©BotWhatsapp By ArulGanz", gam, but)
 break
                 case '-':
 					Zitsraa.sendMessage(from, help(prefix), text,{contextInfo: {forwardingScore : 508, isForwarded: true},quoted : freply})
@@ -573,7 +573,7 @@ break
 			    Zitsraa.sendMessage(from, `\`\`\`Status : SELF\`\`\``, text,{quoted :freply})
 			    break
 			    
-			  case '!public':
+			  case 'public':
 			    if (!mek.key.fromMe) return reply('*Kamu Owner?*')
 			    public = true
 			    Zitsraa.sendMessage(from, `\`\`\`Status : PUBLIC\`\`\``, text,{quoted :freply})
@@ -597,7 +597,7 @@ break
                         txt += `\n🔖Hasil : ${result.hasil}\n`
                         txt += `🕹️Score : ${result.score}\n`
                         reply(txt)
-                        case '!patnerbot':
+                        case 'patnerbot':
 teks =
 `┏━➤ 「 *Patner Bot*」
 ┃┃✯ *1. Aril Dwi Indra Lesmana*😎
@@ -611,7 +611,7 @@ teks =
 ┗━━━━━━━`
 gam = fs.readFileSync('./media/gambar/patner.png')
 but = [
-          { buttonId: `!menu`, buttonText: { displayText: 'Back To Menu' }, type: 1 }, { buttonId: `!owner`, buttonText: { displayText: 'Owner' }, type: 1 },
+          { buttonId: `${prefix}menu`, buttonText: { displayText: 'Back To Menu' }, type: 1 }, { buttonId: `${prefix}owner`, buttonText: { displayText: 'Owner' }, type: 1 },
         ]
         sendButLocation(from, teks, "©BotWhatsapp By ArulGanz", gam, but)
 break
