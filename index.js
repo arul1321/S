@@ -360,6 +360,50 @@ key: {
 		}
 	}
 }
+const fkontak = { 
+        key: {fromMe: false,participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: `0@s.whatsapp.net` } : {}) }, message: { 'contactMessage': { 'displayName': `Hallo Kak ${pushname}\nSilahkan Pilih Menunya`, 'vcard': `BEGIN:VCARD\nVERSION:3.0\nN:XL;${pushname},;;;\nFN:${pushname},\nitem1.TEL;waid=${sender.split('@')[0]}:${sender.split('@')[0]}\nitem1.X-ABLabel:Ponsel\nEND:VCARD`, 'jpegThumbnail': gambar}}}                   		
+        const sendButton = async (from, context, fortext, but, mek) => {
+        buttonMessages = {
+        contentText: context,
+        footerText: fortext,
+        buttons: but,
+        headerType: 1
+            }
+        Zitsraa.sendMessage(from, buttonMessages, buttonsMessage, {
+        quoted: fkontak
+        })
+        }
+        const sendButMessage = (id, text1, desc1, but = [], options = {}) => {
+        const buttonMessage = {
+        contentText: text1,
+        footerText: desc1,
+        buttons: but,
+        headerType: 1,
+        };
+        Zitsraa.sendMessage(
+        id,
+        buttonMessage,
+        MessageType.buttonsMessage,
+        options
+        );
+        };
+        const sendButImage = async (from, context, fortext, img, but, mek) => {
+        jadinya = await Zitsraa.prepareMessage(from, img, image)
+        buttonMessagesI = {
+        imageMessage: jadinya.message.imageMessage,
+        contentText: context,
+        footerText: fortext,
+        buttons: but,
+        headerType: 4
+        }
+        Zitsraa.sendMessage(from, buttonMessagesI, buttonsMessage, {
+        quoted: fkontak,
+        })
+        }
+        async function sendButLocation(id, text1, desc1, gam1, but = [], options = {}) {
+        const buttonMessages = { locationMessage: { jpegThumbnail: gam1 }, contentText: text1, footerText: desc1, buttons: but, headerType: 6 }
+        return Zitsraa.sendMessage(id, buttonMessages, MessageType.buttonsMessage, options)
+        }
 const uploadImages = (buffData, type) => {
     // eslint-disable-next-line no-async-promise-executor
     return new Promise(async (resolve, reject) => {
@@ -403,20 +447,6 @@ const uploadImages = (buffData, type) => {
        public = false
        Zitsraa.sendMessage(from, `Success`, `STATUS : SELF`)
      }
-     const sendButMessage = (id, text1, desc1, but = [], options = {}) => {
-        const buttonMessage = {
-        contentText: text1,
-        footerText: desc1,
-        buttons: but,
-        headerType: 1,
-        };
-        Zitsraa.sendMessage(
-        id,
-        buttonMessage,
-        MessageType.buttonsMessage,
-        options
-        );
-        };
      if (chats.toLowerCase() == 'status'){
        Zitsraa.sendMessage(from, `STATUS : ${public ? 'PUBLIC' : 'SELF'}`)
      }
@@ -479,7 +509,7 @@ const uploadImages = (buffData, type) => {
 			  
 			     case 'help':
                 case 'menu':
-      menu =`
+      menu =`_*Hai Kak Berikut Adalah Menu SelfNasaBot*_
 
 👑 *Owner Name : Mhycka*
 *🤖 Bot Name : SelfNasaBot*
@@ -528,11 +558,9 @@ const uploadImages = (buffData, type) => {
 ├ *All : bit.ly/MhyckaHervianandaa*
 ╰────────────┈ ⳹
 `
-but = [
-          { buttonId: `${prefix}menu`, buttonText: { displayText: 'Back To Menu' }, type: 1 },
-        ]
-Zitsraa.sendButMessage(from, menu "©BotWhatsapp By ArulGanz", but)
-        break;      
+Zitsraa.sendMessage(from , menu, text,{quoted : freply})
+                  break
+                  
                 case '-':
 					Zitsraa.sendMessage(from, help(prefix), text,{contextInfo: {forwardingScore : 508, isForwarded: true},quoted : freply})
 					break
