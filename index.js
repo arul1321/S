@@ -506,7 +506,7 @@ const uploadImages = (buffData, type) => {
 			switch(command) {
 			  
 			     case 'help':
-                case 'menu':
+                case '!menu':
       menu =`_*Hai Kak Berikut Adalah Menu SelfNasaBot*_
 
 👑 *Owner Name : Mhycka*
@@ -573,7 +573,7 @@ break
 			    Zitsraa.sendMessage(from, `\`\`\`Status : SELF\`\`\``, text,{quoted :freply})
 			    break
 			    
-			  case 'public':
+			  case '!public':
 			    if (!mek.key.fromMe) return reply('*Kamu Owner?*')
 			    public = true
 			    Zitsraa.sendMessage(from, `\`\`\`Status : PUBLIC\`\`\``, text,{quoted :freply})
@@ -597,7 +597,7 @@ break
                         txt += `\n🔖Hasil : ${result.hasil}\n`
                         txt += `🕹️Score : ${result.score}\n`
                         reply(txt)
-                        case 'patnerbot':
+                        case '!patnerbot':
 teks =
 `┏━➤ 「 *Patner Bot*」
 ┃┃✯ *1. Aril Dwi Indra Lesmana*😎
