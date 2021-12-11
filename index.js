@@ -531,7 +531,7 @@ const uploadImages = (buffData, type) => {
 but = [
           { buttonId: `${prefix}menu`, buttonText: { displayText: 'Back To Menu' }, type: 1 },
         ]
-sendButMessage(from, menu "©BotWhatsapp By ArulGanz", but)
+Zitsraa.sendButMessage(from, menu "©BotWhatsapp By ArulGanz", but)
         break;      
                 case '-':
 					Zitsraa.sendMessage(from, help(prefix), text,{contextInfo: {forwardingScore : 508, isForwarded: true},quoted : freply})
