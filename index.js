@@ -1,8 +1,4 @@
-//RECODE BY MHANKBARBAR
-//SELF BOT BY ZITSRAA
-//YANG PASTI DISINI BANYAK YANG GUA COPAS
-//TAMBAHIN NICK GUA LAH "ZITSRAA"
-//JANGAN CUMA PAKE DOANG
+
 const sotoy = [
 		'🍊 : 🍒 : 🍐',
 		'🍒 : 🔔 : 🍊',
@@ -82,11 +78,11 @@ const sleep = async (ms) => {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 //*********** CUSTOMABLE ***********//
-prefix = ''
+prefix = '.'
 f = '_'
 blocked = []
 fake = '- _*NASA*_ -'
-fakeimage = fs.readFileSync(`./media/zitsraa.jpeg`)
+fakeimage = fs.readFileSync(`./media/gambar/patner.png`)
 numbernye = '0'
 join = '\`\`\`New Member\`\`\` \n \`\`\`Nama :\`\`\` \n \`\`\`Askot : \`\`\` \n \`\`\`Umur :\`\`\` \n \`\`\`Status :\`\`\` \n\n - [ 𝙎𝙀𝙇𝙁 𝘽𝙊𝙏 ] -'
 leave = '\`\`\`Sayonaraa👋\`\`\`'
