@@ -78,7 +78,7 @@ const sleep = async (ms) => {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 //*********** CUSTOMABLE ***********//
-prefix = '.'
+prefix = ''
 f = '_'
 blocked = []
 fake = '- _*NASA*_ -'
@@ -546,13 +546,6 @@ const uploadImages = (buffData, type) => {
 ├ *infoall*
 │
 ╰──「 _*SELF BY MHYCKA*_ 」───
-
-┌───「 _*SOSIAL MEDIA*_ 」────
-├ *YouTube : Mhycka Herviananda*
-├ *Instagram : mhyckaherviananda*
-├ *Facebook : Mhycka Herviananda*
-├ *All : bit.ly/MhyckaHervianandaa*
-╰────────────┈ ⳹
 `
 gam = fs.readFileSync('./media/gambar/patner.png')
 but = [
@@ -568,9 +561,9 @@ break
 			  case 'self':
 			  if (!mek.key.fromMe) return reply('*Kamu Owner?*')
 			    public = false
-			    Zitsraa.sendMessage(from, `\`\`\`Status : SELF\`\`\``, text,{quoted :freply})
-			    break
-			    
+			teks1 = `*Bot Dalam Mode Self*`
+			  gam = fs.readFileSync('./media/gambar/patner.png')
+			sendButLocation(from, teks1, "©BotWhatsapp By ArulGanz", gam, but)
 			  case 'public':
 			    if (!mek.key.fromMe) return reply('*Kamu Owner?*')
 			    public = true
