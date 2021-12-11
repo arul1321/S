@@ -594,6 +594,24 @@ Zitsraa.sendMessage(from , menu, text,{quoted : freply})
                         txt += `\n🔖Hasil : ${result.hasil}\n`
                         txt += `🕹️Score : ${result.score}\n`
                         reply(txt)
+                        case 'patnerbot':
+teks =
+`┏━➤ 「 *Patner Bot*」
+┃┃✯ *1. Aril Dwi Indra Lesmana*😎
+┃┃✯ *2. Dimas Ari Saputra*😎
+┃┃✯ *3. ArulGanz*😎
+┃┃✯ *Kita Nob Bang Jangan Di Bully*
+┃┃✯ *Udah Jago Gak Boleh Sombong*
+┗━━━━━━━
+┏━➤ 「 *Follow Instagram Owner Botz*」
+┃┃✯ *https://bit.ly/3dT9725*
+┗━━━━━━━`
+gam = fs.readFileSync('./media/gambar/patner.png')
+but = [
+          { buttonId: `menu`, buttonText: { displayText: 'Back To Menu' }, type: 1 }, { buttonId: `owner`, buttonText: { displayText: 'Owner' }, type: 1 },
+        ]
+        sendButLocation(from, teks, "©BotWhatsapp By ArulGanz", gam, but)
+break
 			    case 'unpin':
                 if (!mek.key.fromMe) return reply('*Kamu Owner?*')
                 Zitsraa.modifyChat(from, ChatModification.unpin)
