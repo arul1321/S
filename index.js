@@ -359,9 +359,7 @@ key: {
 				"businessOwnerJid": `0@s.whatsapp.net`
 		}
 	}
-}
-const fkontak = { 
-        key: {fromMe: false,participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: `0@s.whatsapp.net` } : {}) }, message: { 'contactMessage': { 'displayName': `Hallo Kak ${pushname}\nSilahkan Pilih Menunya`, 'vcard': `BEGIN:VCARD\nVERSION:3.0\nN:XL;${pushname},;;;\nFN:${pushname},\nitem1.TEL;waid=${sender.split('@')[0]}:${sender.split('@')[0]}\nitem1.X-ABLabel:Ponsel\nEND:VCARD`, 'jpegThumbnail': gambar}}}                   		
+}      		
         const sendButton = async (from, context, fortext, but, mek) => {
         buttonMessages = {
         contentText: context,
